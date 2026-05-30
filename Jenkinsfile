@@ -40,6 +40,21 @@ pipeline {
             }
 
         }
+        
+        stage('Deploy Container') {
+            
+            steps {
+                sh '''
+                docker stop final-devops || true
+                docker rm final-devops || true 
+
+
+                docker run -d --name final-devops -p 8081:80 skrrr0307/final-devops-project:v1
+                ''' 
+            } 
+
+        }
+ 
 
     }
 
