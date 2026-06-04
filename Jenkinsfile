@@ -7,7 +7,8 @@ pipeline {
         stage('Build Docker Image') {
 
             steps {
-                sh 'docker build -t skrrr0307/final-devops-project:v1 .'
+                echo "Building image versioning ${BUILD_NUMBER}"
+                sh 'docker build -t skrrr0307/final-devops-project:${BUILD_NUMBER} .'
             }
 
         }
@@ -36,7 +37,7 @@ pipeline {
         stage('Push Image') {
 
             steps {
-                sh 'docker push skrrr0307/final-devops-project:v1'
+                sh 'docker push skrrr0307/final-devops-project:${BUILD_NUMBER}'
             }
 
         }
@@ -49,7 +50,7 @@ pipeline {
                 docker rm final-devops || true 
 
 
-                docker run -d --name final-devops -p 8081:80 skrrr0307/final-devops-project:v1
+                docker run -d --name final-devops -p 8081:80 skrrr0307/final-devops-project:${BUILD_NUMBER}
                 ''' 
             } 
 
