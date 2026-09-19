@@ -6,7 +6,7 @@ The project automatically builds a Docker image, pushes the image to Docker Hub 
 
 ---
 
-##Project Overview
+## Project Overview
 
 This project demonstrates how source code can move from a developer's GitHub repository to a running Docker container through an automated CI/CD pipeline.
 
@@ -32,6 +32,7 @@ Jenkins
     |
     v
 Running Web Application
+```
 
 ## Architecture
 
