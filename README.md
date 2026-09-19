@@ -1,30 +1,71 @@
-# Mini DevOps Project
+# DevOps CI/CD Project
 
-## Overview
+A hands-on DevOps project demonstrating an automated CI/CD pipeline using GitHub, Jenkins, Docker, Docker Hub, and GitHub Webhooks.
 
-This project demonstrates a complete DevOps CI/CD workflow using:
+The project automatically builds a Docker image, pushes the image to Docker Hub with a unique Jenkins build number, and deploys the latest containerized application.
 
-- Git & GitHub
-- Docker
-- Docker Hub
-- Jenkins
-- GitHub Webhooks
+---
+
+##Project Overview
+
+This project demonstrates how source code can move from a developer's GitHub repository to a running Docker container through an automated CI/CD pipeline.
+
+### Workflow
+
+```text
+Developer
+    |
+    v
+GitHub Repository
+    |
+    | GitHub Webhook
+    v
+Jenkins
+    |
+    +--> Docker Build
+    |
+    +--> Docker Hub Login
+    |
+    +--> Docker Image Push
+    |
+    +--> Container Deployment
+    |
+    v
+Running Web Application
 
 ## Architecture
 
-Developer
-↓
-GitHub
-↓
-Webhook
-↓
-Jenkins Pipeline
-↓
-Docker Build
-↓
-Docker Hub Push
-↓
-Automatic Deployment
+                 +----------------+
+                 |    Developer   |
+                 +-------+--------+
+                         |
+                         | git push
+                         v
+                 +----------------+
+                 |     GitHub     |
+                 +-------+--------+
+                         |
+                         | Webhook
+                         v
+                 +----------------+
+                 |     Jenkins    |
+                 +-------+--------+
+                         |
+              +----------+----------+
+              |                     |
+              v                     v
+       Docker Build           Docker Hub
+              |                     |
+              +----------+----------+
+                         |
+                         v
+                 Docker Container
+                         |
+                         v
+                 Nginx Web Server
+                         |
+                         v
+                 Web Application
 
 ## Tools Used
 
