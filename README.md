@@ -10,6 +10,7 @@ The project automatically builds a Docker image, pushes the image to Docker Hub 
 
 This project demonstrates how source code can move from a developer's GitHub repository to a running Docker container through an automated CI/CD pipeline.
 
+
 ### Workflow
 
 ```text
@@ -111,6 +112,7 @@ docker rm final-devops || true
 docker run -d --name final-devops -p 8081:80 skrrr0307/final-devops-project:${BUILD_NUMBER}
 ```
 
+
 ## Docker Image Versioning
 
 The Project uses Jenkins BUILD_NUMBER to create unique Docker image tags
@@ -123,8 +125,9 @@ Build 3 → final-devops-project:3
 ```
 This provides basic version traceability between Jenkins builds and Docker images.
 
-## Repository Structure
 
+## Repository Structure
+```text
 final-devops-project/
 │
 ├── app/
@@ -142,6 +145,8 @@ final-devops-project/
 ├── Jenkinsfile
 ├── README.md
 └── .gitignore
+```
+
 
 ## Docker Configuration
 
@@ -168,6 +173,7 @@ docker run -d \
 Open:
 http://localhost:8081
 
+
 ## Jenkins Configuration
 
 The pipeline is defined in the Jenkinsfile.
@@ -176,6 +182,7 @@ Docker Hub authentication uses the Jenkins credential:
 docker-hub-creds
 
 Credentials are stored in Jenkins rather than being hardcoded in the repository.
+
 
 ## GitHub Webhook
 
@@ -186,9 +193,8 @@ https://<jenkins-webhook-url>/github-webhook/
 
 Jenkins then starts the CI/CD pipeline.
 
-## Security
 
-Security
+## Security
 
 Sensitive files are excluded through .gitignore.
 
@@ -207,6 +213,7 @@ Never commit:
 -SSH private keys
 -Jenkins secrets
 -API tokens
+
 
 ## Local Testing
 
@@ -229,6 +236,7 @@ Test the application:
 curl http://localhost:8081
 ```
 
+
 ## Screenshots
 
 The screenshots/ directory will contain evidence of the CI/CD workflow.
@@ -242,12 +250,14 @@ Planned screenshots:
 -Running application
 -GitHub webhook delivery
 
+
 ## Troubleshooting
 
 Common issues encountered while building this project will be documented under:
 ```bash
 docs/troubleshooting.md
 ```
+
 
 ## Future Improvements
 
@@ -259,6 +269,7 @@ docs/troubleshooting.md
 -Monitoring and logging
 -Security scanning
 -Rolling deployments
+
 
 ## Author
 
