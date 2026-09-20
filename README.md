@@ -5,7 +5,18 @@ A hands-on DevOps project demonstrating an automated CI/CD pipeline using GitHub
 The project automatically builds a Docker image, pushes the image to Docker Hub with a unique Jenkins build number, and deploys the latest containerized application.
 
 ---
+## Key DevOps Concepts Demonstrated
 
+- Git-based source control
+- Webhook-driven CI/CD
+- Jenkins pipeline automation
+- Docker image creation
+- Docker image versioning using Jenkins build numbers
+- Docker Hub image publishing
+- Automated container deployment
+- Jenkins credential management
+- Basic deployment troubleshooting
+---
 ## Project Overview
 
 This project demonstrates how source code can move from a developer's GitHub repository to a running Docker container through an automated CI/CD pipeline.
