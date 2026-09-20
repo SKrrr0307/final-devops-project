@@ -281,6 +281,22 @@ docs/troubleshooting.md
 -Security scanning
 -Rolling deployments
 
+---
+
+## Key Learnings
+
+Through this project, I gained hands-on experience with:
+
+- Designing a basic CI/CD workflow
+- Integrating GitHub with Jenkins using webhooks
+- Building Docker images through Jenkins
+- Using Jenkins Credentials Manager for external authentication
+- Publishing versioned Docker images to Docker Hub
+- Deploying containers automatically
+- Troubleshooting GitHub, Jenkins, Docker, and credential-related issues
+- Using Jenkins `BUILD_NUMBER` for Docker image versioning
+- Structuring a DevOps project for reproducibility and documentation
+
 
 ## Author
 
