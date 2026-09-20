@@ -166,3 +166,10 @@ Terraform state files
 ```
 
 Use secret-management mechanisms such as Jenkins Credentials Manager instead.
+
+## 9. Github & Docker PAT expiration & Updating in Jenkins > Credentials tab
+
+### Scenario & Solution
+```text
+The GitHub webhook was returning HTTP 200, but Jenkins wasn't successfully processing the pipeline because the GitHub PAT stored in Jenkins had expired. After updating the Jenkins credential, the SCM checkout worked. I then encountered a separate expired Docker Hub PAT, updated that credential as well, and verified the complete webhook-to-deployment flow.
+```
